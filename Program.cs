@@ -6,25 +6,17 @@ namespace logical_problems
     {
         static void Main(string[] args)
         {
-            //prime number logic ;
+            //reverse number logic ;
             Console.WriteLine("enter a number");
             int n=int.Parse(Console.ReadLine());
-            int count = 1;
-            for(int i = 2; i <= n; i++)
+            int rem = 0, rev = 0, temp = n;
+            while(n>0)
             {
-                if(n%i==0)
-                {
-                    count++;
-                }
+                rem = n % 10;
+                rev =rev*10+ rem ;
+                n=n/10;
             }
-            if(count == 2)
-            {
-                Console.WriteLine(n+" IS A PRIME NUMBER");
-            }
-            else
-            {
-                Console.WriteLine(n + " IS NOT A PRIME NUMBER");
-            }
+            Console.WriteLine("the reverse of {0} is {1}", temp, rev);
             
         }
     }
