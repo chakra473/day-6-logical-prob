@@ -11,8 +11,9 @@ namespace logical_problems
             
             var timer = new Stopwatch ();
             Console.WriteLine("start the stopwatch by pressing any key");
+            Console.ReadKey();
             timer.Start();
-           Console.ReadKey();
+          
             Console.WriteLine("end the stopwatch by pressing any key");
             Console.ReadKey();
             timer.Stop();
