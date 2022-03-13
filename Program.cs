@@ -6,18 +6,36 @@ namespace logical_problems
     {
         static void Main(string[] args)
         {
-            //reverse number logic ;
-            Console.WriteLine("enter a number");
+            //coupon number logic ;
+            Random random = new Random();
+            Console.WriteLine("enter the number of coupon numbers to be generated");
             int n=int.Parse(Console.ReadLine());
-            int rem = 0, rev = 0, temp = n;
-            while(n>0)
+            Console.WriteLine("the {0} unique coupon numbers are :",n);
+            System.Collections.Generic.List<int> list = new System.Collections.Generic.List<int>();//created list to store random values;
+            int i = 0;
+            while (i < n)
             {
-                rem = n % 10;
-                rev =rev*10+ rem ;
-                n=n/10;
+                int v = random.Next(10, 20);
+                if (!list.Contains(v))//only enter the condition if list does not contains values of random number i.e.only new number enters to the list;
+                {
+                    list.Add(v);//add the random number to the list
+                    Console.WriteLine(v);
+                    i++;
+
+                }
+                else
+                {
+                    i--;
+                
+               }
+
             }
-            Console.WriteLine("the reverse of {0} is {1}", temp, rev);
+
+          
+           
             
         }
+            
+        
     }
 }
