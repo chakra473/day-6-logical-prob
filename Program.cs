@@ -6,17 +6,24 @@ namespace logical_problems
     {
         static void Main(string[] args)
         {
-            //fibocci series logic for n numbers;
-            Console.WriteLine("enter the number upto which fibonacci series to be printed");
+            //perfect number logic ;
+            Console.WriteLine("enter a number");
             int n=int.Parse(Console.ReadLine());
-            int n1 = 0, n2 = 1, n3 = 0;
-            Console.Write("the fibonacci series of "+n+" are: " +n1 +" "+ n2 +" ");
-            for(int i = 2; i < n; i++)
+            int res = 0;
+            for(int i=1; i<n; i++)
             {
-                n3 = n1 + n2;
-                Console.Write(n3 + " ");
-                n1 = n2;
-                n2= n3;
+                if(n%i==0)
+                {
+                res=res+i;
+                }
+            }
+            if(res==n)
+            {
+                Console.WriteLine(n+" IS A PERFECT NUMBER");
+            }
+            else
+            {
+                Console.WriteLine(n + " IS NOT A PERFECT NUMBER");
             }
         }
     }
