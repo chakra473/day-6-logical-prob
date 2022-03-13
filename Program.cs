@@ -6,25 +6,26 @@ namespace logical_problems
     {
         static void Main(string[] args)
         {
-            //perfect number logic ;
+            //prime number logic ;
             Console.WriteLine("enter a number");
             int n=int.Parse(Console.ReadLine());
-            int res = 0;
-            for(int i=1; i<n; i++)
+            int count = 1;
+            for(int i = 2; i <= n; i++)
             {
                 if(n%i==0)
                 {
-                res=res+i;
+                    count++;
                 }
             }
-            if(res==n)
+            if(count == 2)
             {
-                Console.WriteLine(n+" IS A PERFECT NUMBER");
+                Console.WriteLine(n+" IS A PRIME NUMBER");
             }
             else
             {
-                Console.WriteLine(n + " IS NOT A PERFECT NUMBER");
+                Console.WriteLine(n + " IS NOT A PRIME NUMBER");
             }
+            
         }
     }
 }
